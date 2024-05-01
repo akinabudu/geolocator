@@ -29,7 +29,7 @@ const [beta, setBeta] = useState<number|null>(0);
 
   return (
     <div>
-      {beta}
+      {beta &&Math.round(beta)}
     </div>
   );
 };
