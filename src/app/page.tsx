@@ -5,10 +5,10 @@ import DeviceEventsPage from "./DeviceEvent/page";
 
 export default function Home() {
   return (
-   <main className="flex min-h-screen flex-col items-center justify-around p-24">
+   <main className="flex min-h-screen flex-col items-center justify-around p-24 bg-black">
     {/* <ModeToggle/> */}
     {/* <CardWithForm/> */}
-    <div className="flex flex-col items-center justify-center gap-4 border p-10 text-2xl">
+    <div className="flex flex-col items-center justify-center gap-4 border p-10 text-2xl text-white">
 
     <DeviceEventsPage/>
     </div>
