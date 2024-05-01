@@ -2,27 +2,29 @@
 import React, { useCallback, useEffect, useState } from "react";
 
 const DeviceEventsPage: React.FC = () => {
-  const [alpha, setAlpha] = useState<number | null>(0);
-  const [beta, setBeta] = useState<number | null>(0);
-  const [gamma, setGamma] = useState<number | null>(0);
+//   const [alpha, setAlpha] = useState<number | null>(0);
+//   const [beta, setBeta] = useState<number | null>(0);
+//   const [gamma, setGamma] = useState<number | null>(0);
   const [stepCount, setStepCount] = useState(0);
   const [isStepping, setIsStepping] = useState(false);
 
   const handleDeviceOrientation = useCallback((e: DeviceOrientationEvent) => {
     console.log(e);
-    // setAlpha(e.alpha);
-    setBeta(e.beta);
-    // setGamma(e.gamma);
+const {alpha,beta,gamma} =e   
+// setGamma(e.gamma);
     // Do something with `e.alpha`, `e.beta`, and `e.gamma`
     //   e.alpha: rotation around the Z axis
     //   e.beta: rotation around the X axis
     //   e.gamma: rotation around the Y axis
-    if (e.beta && e.gamma && e.alpha ) {
-        const threshold = 100;
+    if (beta && gamma && alpha ) {
+        const threshold = 10;
         const accelerationMagnitude = Math.sqrt(
-          e.beta * e.beta + e.gamma * e.gamma + e.alpha * e.alpha
+          beta * beta + gamma * gamma + alpha * alpha
         );
-        if(accelerationMagnitude > threshold ){
+        const x = Math.abs(beta)
+        const y= Math.abs(gamma)
+        const z= Math.abs(alpha)
+        if(x > threshold || y > threshold || y > threshold) {
             setStepCount((prevCount) => prevCount + 1);
         }else if (
             accelerationMagnitude < threshold 
