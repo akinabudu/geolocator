@@ -18,7 +18,7 @@ const {alpha,beta,gamma} =e
     //   e.beta: rotation around the X axis
     //   e.gamma: rotation around the Y axis
     if (beta && gamma && alpha ) {
-        const threshold = 369;
+        const threshold = 200;
         const accelerationMagnitude = Math.sqrt(
           beta * beta + gamma * gamma + alpha * alpha
         );
