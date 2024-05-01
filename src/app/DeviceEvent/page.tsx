@@ -5,6 +5,7 @@ const DeviceEventsPage: React.FC = () => {
 //   const [alpha, setAlpha] = useState<number | null>(0);
 //   const [beta, setBeta] = useState<number | null>(0);
 //   const [gamma, setGamma] = useState<number | null>(0);
+const [prevmagnitude, setPrevmagnitude] = useState(0);
   const [stepCount, setStepCount] = useState(0);
   const [isStepping, setIsStepping] = useState(false);
 
@@ -21,10 +22,12 @@ const {alpha,beta,gamma} =e
         const accelerationMagnitude = Math.sqrt(
           beta * beta + gamma * gamma + alpha * alpha
         );
+        const magDelta = accelerationMagnitude - prevmagnitude;
+        setPrevmagnitude(accelerationMagnitude);
         const x = Math.abs(beta)
         const y= Math.abs(gamma)
         const z= Math.abs(alpha)
-        if(x > threshold || y > threshold || y > threshold) {
+        if(magDelta > threshold) {
             setStepCount((prevCount) => prevCount + 1);
         }else if (
             accelerationMagnitude < threshold 
