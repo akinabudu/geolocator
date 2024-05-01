@@ -42,7 +42,7 @@ const {alpha,beta,gamma} =e
     };
   }, [handleDeviceOrientation]);
 
-  return <div>{stepCount}</div>;
+  return <div>{Math.round(stepCount/100)}</div>;
 };
 
 export default DeviceEventsPage;
