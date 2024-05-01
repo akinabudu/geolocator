@@ -18,7 +18,7 @@ const DeviceEventsPage: React.FC = () => {
     //   e.beta: rotation around the X axis
     //   e.gamma: rotation around the Y axis
     if (e.beta && e.gamma && e.alpha ) {
-        const threshold = 12;
+        const threshold = 100;
         const accelerationMagnitude = Math.sqrt(
           e.beta * e.beta + e.gamma * e.gamma + e.alpha * e.alpha
         );
