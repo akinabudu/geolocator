@@ -10,7 +10,7 @@ const [prevmagnitude, setPrevmagnitude] = useState(0);
   const [isStepping, setIsStepping] = useState(false);
 
   const handleDeviceOrientation = useCallback((e: DeviceOrientationEvent) => {
-    console.log(e);
+   // console.log(e);
 const {alpha,beta,gamma} =e   
 // setGamma(e.gamma);
     // Do something with `e.alpha`, `e.beta`, and `e.gamma`
@@ -18,25 +18,21 @@ const {alpha,beta,gamma} =e
     //   e.beta: rotation around the X axis
     //   e.gamma: rotation around the Y axis
     if (beta && gamma && alpha ) {
-        const threshold = 6;
+        const threshold = 300;
         const accelerationMagnitude = Math.sqrt(
           beta * beta + gamma * gamma + alpha * alpha
         );
         const magDelta = accelerationMagnitude - prevmagnitude;
         setPrevmagnitude(accelerationMagnitude);
-        const x = Math.abs(beta)
-        const y= Math.abs(gamma)
-        const z= Math.abs(alpha)
+        console.log(Math.round(accelerationMagnitude))
+        // const x = Math.abs(beta)
+        // const y= Math.abs(gamma)
+        // const z= Math.abs(alpha)
         if(magDelta > threshold) {
             setStepCount((prevCount) => prevCount + 1);
-        }else if (
-            accelerationMagnitude < threshold 
-        ) {
-            // Reset step detection
-            setIsStepping(false);
+            console.log({stepCount:stepCount/100});
         }
     } 
-   
   }, []);
 
   useEffect(() => {
@@ -46,7 +42,7 @@ const {alpha,beta,gamma} =e
     };
   }, [handleDeviceOrientation]);
 
-  return <div>{stepCount/100}</div>;
+  return <div>{stepCount}</div>;
 };
 
 export default DeviceEventsPage;
