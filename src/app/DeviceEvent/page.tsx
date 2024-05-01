@@ -18,7 +18,7 @@ const {alpha,beta,gamma} =e
     //   e.beta: rotation around the X axis
     //   e.gamma: rotation around the Y axis
     if (beta && gamma && alpha ) {
-        const threshold = 300;
+        const threshold = 500;
         const accelerationMagnitude = Math.sqrt(
           beta * beta + gamma * gamma + alpha * alpha
         );
@@ -30,7 +30,7 @@ const {alpha,beta,gamma} =e
         // const z= Math.abs(alpha)
         if(magDelta > threshold) {
             setStepCount((prevCount) => prevCount + 1);
-            console.log({stepCount:stepCount/100});
+            console.log({stepCount:stepCount});
         }
     } 
   }, []);
