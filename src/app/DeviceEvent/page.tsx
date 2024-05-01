@@ -24,11 +24,11 @@ const {alpha,beta,gamma} =e
         );
         const magDelta = accelerationMagnitude - prevmagnitude;
         setPrevmagnitude(accelerationMagnitude);
-        console.log(Math.round(accelerationMagnitude))
+        console.log(Math.round(magDelta))
         // const x = Math.abs(beta)
         // const y= Math.abs(gamma)
         // const z= Math.abs(alpha)
-        if(accelerationMagnitude > threshold) {
+        if(magDelta > threshold) {
             setStepCount((prevCount) => prevCount + 1);
             console.log({stepCount:stepCount});
         }
