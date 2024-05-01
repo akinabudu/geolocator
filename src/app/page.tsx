@@ -2,6 +2,7 @@ import { CardWithForm } from "@/components/Card";
 import { ModeToggle } from "@/components/ModeToogle";
 import Image from "next/image";
 import DeviceEventsPage from "./DeviceEvent/page";
+import GoogleStepCounter from "./googlefitapi/page";
 
 export default function Home() {
   return (
@@ -10,7 +11,10 @@ export default function Home() {
     {/* <CardWithForm/> */}
     <div className="flex flex-col items-center justify-center gap-4 border p-10 text-2xl text-white">
 
-    <DeviceEventsPage/>
+    {/* <DeviceEventsPage/> */}
+
+
+    <GoogleStepCounter/>
     </div>
    </main>
   );
