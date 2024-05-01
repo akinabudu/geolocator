@@ -37,6 +37,7 @@ const GoogleStepCounter = () => {
         // Extract step count from the response
         const stepCount = response.data.bucket[0].dataset[0].point[0].value[0].intVal;
         setSteps(stepCount);
+        console.log(stepCount)
       } catch (error) {
         console.error('Error fetching step count:', error);
       }
