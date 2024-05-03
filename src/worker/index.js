@@ -9,24 +9,20 @@ self.addEventListener("install", (event) => {
   });
   
   self.addEventListener("fetch", (event) => {
-    console.log("Fetching:", event.request.url);
+    // console.log("Fetching:", event.request.url);
   });
 
   self.addEventListener('push', (event) => {
-    console.log("Push:", event.request.url);
+    console.log("Push:", event);
   });
 
   self.addEventListener('sync', (event) => {
-    console.log("Sync:", event);
+    console.log("Sync:",  event);
   });
 
   function calculateStepCount() {
-    const stepCount =  
-      self.clients.matchAll().then((clients) => {
-        clients.forEach((client) => {
-          client.postMessage({ type: 'stepCountUpdate', value: stepCount });
-        });
-      });
+    const stepCount = 400
+    
       console.log(stepCount)
   }
-  //////
+  

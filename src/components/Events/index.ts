@@ -1,11 +1,10 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useState, useEffect } from 'react';
 
-const DeviceEventsPage = () => {
+export default function DeviceEventsPage () {
   const [prevmagnitude, setPrevmagnitude] = useState(0);
   const [stepCount, setStepCount] = useState(0);
-  const [isStepping, setIsStepping] = useState(false);
 
-  const handleDeviceOrientation = useCallback((e: DeviceOrientationEvent) => {
+  const handleDeviceOrientation = (e: DeviceOrientationEvent) => {
     const { alpha, beta, gamma } = e;
 
     if (beta && gamma && alpha) {
@@ -15,23 +14,22 @@ const DeviceEventsPage = () => {
       );
       const magDelta = accelerationMagnitude - prevmagnitude;
       setPrevmagnitude(accelerationMagnitude);
-      // console.log(Math.round(magDelta));
+      console.log(Math.round(magDelta));
 
       if (magDelta > threshold) {
         setStepCount((prevCount) => prevCount + 1);
-        // console.log({ stepCount: stepCount });
+        console.log({ stepCount: stepCount });
       }
     }
-  }, []);
+  };
 
   useEffect(() => {
-    window.addEventListener("deviceorientation", handleDeviceOrientation);
+    window.addEventListener('deviceorientation', handleDeviceOrientation);
     return () => {
-      window.removeEventListener("deviceorientation", handleDeviceOrientation);
+      window.removeEventListener('deviceorientation', handleDeviceOrientation);
     };
-  }, [handleDeviceOrientation]);
+  }, );
 
-  return stepCount / 100;
+  return stepCount / 100
 };
 
-export default DeviceEventsPage;
