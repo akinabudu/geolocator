@@ -8,7 +8,7 @@ export default function DeviceEventsPage () {
     const { alpha, beta, gamma } = e;
 
     if (beta && gamma && alpha) {
-      const threshold = 150;
+      const threshold = 100;
       const accelerationMagnitude = Math.sqrt(
         beta * beta + gamma * gamma + alpha * alpha
       );
