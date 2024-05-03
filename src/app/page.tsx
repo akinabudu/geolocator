@@ -9,7 +9,7 @@ export default function Home() {
       {/* <ModeToggle/> */}
       {/* <CardWithForm/> */}
       <div className="flex flex-col items-center justify-center gap-4 border p-10 text-2xl text-white">
-        {/* <DeviceEventsPage/> */}
+        <DeviceEventsPage/>
 
         
         {/* <GoogleStepCounter/> */}
