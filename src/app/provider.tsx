@@ -1,5 +1,4 @@
 'use client'
-import TelegramLoginButton from "@/components/TelegramLoginWidget";
 import { ThemeProvider } from "@/components/theme-provider"
 import { Inter } from "next/font/google"
 import React from "react";

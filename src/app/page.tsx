@@ -2,7 +2,6 @@ import { CardWithForm } from "@/components/Card";
 import { ModeToggle } from "@/components/ModeToogle";
 import Image from "next/image";
 import DeviceEventsPage from "../components/DeviceOrientationEvents";
-import TelegramLogin from "@/components/TelegramLoginWidget";
 
 export default function Home() {
   return (
