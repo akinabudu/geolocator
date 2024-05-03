@@ -4,16 +4,16 @@ const withPWA = withPWAInit({
   disable:false,
   cacheOnFrontEndNav: true,
   aggressiveFrontEndNavCaching: true,
-  reloadOnOnline: true,
+  // reloadOnOnline: true,
   swcMinify: true,
   extendDefaultRuntimeCaching: true,
   dest: "public",
-  // customWorkerSrc: "public/pwa/",
-  // customWorkerDest: "public/pwa/dest", // defaults to `dest`
+  customWorkerSrc: "src/worker",
+  // customWorkerDest: "public/", // defaults to `dest`
   // customWorkerPrefix: "",
   // fallbacks: {
   //   //image: "/static/images/fallback.png",
-  //   document: "/offline", // if you want to fallback to a custom page rather than /_offline
+    //  document: "/", // if you want to fallback to a custom page rather than /_offline
   //   // font: '/static/font/fallback.woff2',
   //   // audio: ...,
   //   // video: ...,
