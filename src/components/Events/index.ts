@@ -30,6 +30,6 @@ export default function DeviceEventsPage () {
     };
   }, );
 
-  return stepCount / 100
+  return stepCount 
 };
 
