@@ -1,6 +1,7 @@
 "use client";
 import { CardWithForm } from "@/components/Card";
 import DeviceEventsPage from "@/components/Events";
+import GeolocationExample from "@/components/GeoLocator";
 import { ModeToggle } from "@/components/ModeToogle";
 import Image from "next/image";
 import React from "react";
@@ -13,6 +14,10 @@ export default function Home() {
       Step Counter
       <div className="flex flex-col items-center justify-center gap-4 border-4 rounded-full p-20 text-2xl text-white font-bold">
         {value}
+      </div>
+      <div>
+Geolocator
+      <GeolocationExample/>
       </div>
     </main>
   );
