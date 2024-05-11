@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import { useWakeLock } from 'react-screen-wake-lock';
 
@@ -7,6 +8,9 @@ function ScreenWakeLockComponent() {
     onError: () => alert('An error happened \uD83D\uDCA5'),
     onRelease: () => alert('Screen Wake Lock: released!'),
   });
+  React.useEffect(() => {
+    request();
+  }, []);
 
   return (
     <div>
