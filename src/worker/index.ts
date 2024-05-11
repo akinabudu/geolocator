@@ -1,7 +1,7 @@
 
 
 
-self.addEventListener('deviceorientation', (e) => {
+self.addEventListener('', (e) => {
 
   // console.log("Service-Worker: ", e);
   // const { alpha, beta, gamma } = e;
@@ -26,6 +26,24 @@ self.addEventListener("install", (event) => {
   
   self.addEventListener("activate", (event) => {
     console.log("Service worker activated");
+
+
+    self.addEventListener('message', (event) => {
+      if (event.data === 'getGeolocation') {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(
+            (position) => {
+              console.log('Geolocation:', position.coords.latitude, position.coords.longitude);
+            },
+            (error) => {
+              console.error('Error getting geolocation:', error.message);
+            }
+          );
+        } else {
+          console.error('Geolocation is not supported by this browser.');
+        }
+      }
+    });
 
   });
   

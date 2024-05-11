@@ -3,12 +3,13 @@ import { CardWithForm } from "@/components/Card";
 import DeviceEventsPage from "@/components/Events";
 import GeolocationExample from "@/components/GeoLocator";
 import { ModeToggle } from "@/components/ModeToogle";
+import ScreenWakeLock from "@/components/ScreenWakeLock";
 import Image from "next/image";
 import React from "react";
 
 export default function Home() {
-  const value = DeviceEventsPage()
- 
+  const value = DeviceEventsPage();
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-black">
       Step Counter
@@ -16,8 +17,11 @@ export default function Home() {
         {value}
       </div>
       <div>
-Geolocator
-      <GeolocationExample/>
+        Geolocator
+        <GeolocationExample />
+      </div>
+      <div>
+        <ScreenWakeLock/>
       </div>
     </main>
   );

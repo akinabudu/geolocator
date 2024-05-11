@@ -56,6 +56,9 @@ importers:
       react-helmet:
         specifier: ^6.1.0
         version: 6.1.0(react@18.3.1)
+      react-screen-wake-lock:
+        specifier: ^3.0.2
+        version: 3.0.2(react@18.3.1)
       react-telegram-auth-new:
         specifier: ^1.0.5
         version: 1.0.5
@@ -2718,6 +2721,12 @@ packages:
     peerDependenciesMeta:
       '@types/react':
         optional: true
+
+  react-screen-wake-lock@3.0.2:
+    resolution: {integrity: sha512-f88vcfMG1AWYRSIWQ5Qx5YVboH6TSL0F4ZlFLERZp6aKiZRGVRAAJ9wedJdO5jqTMcCDZ4OXJ8PjcSkDmvGSBg==}
+    engines: {node: '>=14.16'}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
   react-side-effect@2.1.2:
     resolution: {integrity: sha512-PVjOcvVOyIILrYoyGEpDN3vmYNLdy1CajSFNt4TDsVQC5KpTijDvWVoR+/7Rz2xT978D8/ZtFceXxzsPwZEDvw==}
@@ -6259,6 +6268,10 @@ snapshots:
       use-sidecar: 1.1.2(@types/react@18.3.1)(react@18.3.1)
     optionalDependencies:
       '@types/react': 18.3.1
+
+  react-screen-wake-lock@3.0.2(react@18.3.1):
+    dependencies:
+      react: 18.3.1
 
   react-side-effect@2.1.2(react@18.3.1):
     dependencies:

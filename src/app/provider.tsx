@@ -1,30 +1,21 @@
-'use client'
-import { ThemeProvider } from "@/components/theme-provider"
-import { Inter } from "next/font/google"
+"use client";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Inter } from "next/font/google";
 import React from "react";
-
 
 const inter = Inter({ subsets: ["latin"] });
 
-
-export default function Provider({ children }: { children:React.ReactNode }) {
-
-
+export default function Provider({ children }: { children: React.ReactNode }) {
   return (
     <>
-      
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <div className={`${inter.className} `}>
-
-            {children}
-            </div>
-          </ThemeProvider>
-  
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+      >
+        <div className={`${inter.className} `}>{children}</div>
+      </ThemeProvider>
     </>
-  )
+  );
 }

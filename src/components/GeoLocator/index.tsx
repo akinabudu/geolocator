@@ -11,14 +11,14 @@ const GeolocationExample = () => {
             latitude: position.coords.latitude,
             longitude: position.coords.longitude,
           });
-          console.log('Geolocation data:', position);
+          // console.log('Geolocation data:', position);
         },
         (error) => {
-          console.error('Error getting geolocation:', error.message);
+          // console.error('Error getting geolocation:', error.message);
         }
       );
     } else {
-      console.error('Geolocation is not supported by this browser.');
+      // console.error('Geolocation is not supported by this browser.');
     }
   }, []);
 
