@@ -12,9 +12,9 @@ export default function Home() {
   const value = DeviceEventsPage();
 
   const { isSupported, released, request, release } = useWakeLock({
-    onRequest: () => alert('Screen Wake Lock: requested!'),
-    onError: () => alert('An error happened \uD83D\uDCA5'),
-    onRelease: () => alert('Screen Wake Lock: released!'),
+    onRequest: () => alert("Screen Wake Lock: requested!"),
+    onError: () => alert("An error happened \uD83D\uDCA5"),
+    onRelease: () => alert("Screen Wake Lock: released!"),
   });
   React.useEffect(() => {
     request();
@@ -26,23 +26,16 @@ export default function Home() {
         {value}
       </div>
       <div>
-        Geolocator
-        <GeolocationExample />
-
-<div>
-      <p>
-        Screen Wake Lock API supported: <b>{`${isSupported}`}</b>
-        <br />
-        Released: <b>{`${released}`}</b>
-      </p>
-      <button className='border p-5'
-        type="button"
-        onClick={() => (released === false ? release() : request())}
-      >
-        {released === false ? 'Release' : 'Request'}
-      </button>
-    </div>      </div>
-     
+        {/* Geolocator
+        <GeolocationExample /> */}
+        <div>
+          <p>
+            Screen Wake Lock API supported: <b>{`${isSupported}`}</b>
+            <br />
+            Released: <b>{`${released}`}</b>
+          </p>
+        </div>{" "}
+      </div>
     </main>
   );
 }
